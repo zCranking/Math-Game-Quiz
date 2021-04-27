@@ -64,3 +64,35 @@ function check(){
 
     document.getElementById("output").innerHTML = "";
 };
+var question_turn = "player1";
+var answer_turn = "player2";
+function check(){
+    get_answer = document.getElementById("input_check_box").value;
+    if (get_answer == actual_answer){
+        if(answer_turn == "player1"){
+            update_player_1_score = player_1_score + 1;
+            document.getElementById("player1_score").innerHTML = update_player_1_score;
+        }
+        else{
+            update_player_2_score = player_2_score + 1;
+            document.getElementById("player2_score").innerHTML = update_player_2_score;
+        }
+
+        if(question_turn == "player1"){
+            question_turn = "player2";
+            document.getElementById("player_question").innerHTML = "Question -" + player_2_name;
+        }
+        else{
+            question_turn = "player1";
+            document.getElementById("player_question").innerHTML = "Question -" + player_1_name;
+        };
+        if(answer_turn == "player2"){
+            answer_turn = "player1";
+            document.getElementById("player_answer").innerHTML = "Answer -" + player_1_name;
+        }
+        else{
+            answer_turn = "player2";
+            document.getElementById("player_answer").innerHTML = "Answer -" + player_2_name;
+        };
+    };
+};
