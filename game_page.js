@@ -30,12 +30,11 @@ function send(){
 
 var question_turn = "player1";
 var answer_turn = "player2";
-
 function check(){
     get_answer = document.getElementById("input_check_box").value;
     answer = get_answer.toLowerCase();
     console.log("answer in lowercase -" + answer);
-    if(answer == word){
+    if(answer == actual_answer){
         if(answer_turn == "player1"){
             player_1_score = player_1_score + 1;
             document.getElementById("player1_score").innerHTML = player_1_score;
